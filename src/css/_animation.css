@@ -1,0 +1,38 @@
+
+@keyframes height-increase {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 100%;
+  }
+}
+
+@keyframes height-decrease {
+  from {
+    max-height: 100%;
+  }
+  to {
+    max-height: 0;
+  }
+}
+
+@keyframes toopacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes noblur {
+  from {
+    -webkit-filter: blur(5px) grayscale(50%);
+            filter: blur(5px) grayscale(50%);
+  }
+  to {
+    -webkit-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+  }
+}

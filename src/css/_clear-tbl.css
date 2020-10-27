@@ -1,0 +1,20 @@
+.clear-tbl {
+  max-width: 500px;
+  border-collapse: collapse;
+  border: none;
+  background-color: none;
+}
+
+.clear-tbl__term {
+  padding-right: 1.2em;
+  color: #78b0a0;
+  font-weight: 700;
+  max-width: 160px;
+  vertical-align: top;
+}
+
+.clear-tbl__desc {
+  padding: 0 5px;
+  vertical-align: bottom;
+  word-spacing: 0.6em;
+}

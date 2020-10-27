@@ -1,0 +1,43 @@
+.logo {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #4e4b4d;
+}
+
+.logo
+
+.logo__img {
+  width: 54px;
+  height: auto;
+  transition: 0.2;
+}
+
+.logo__animation img {
+  opacity: 0;
+  margin: auto;
+  position: absolute;
+  width: 54px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 0.2;
+}
+
+.logo:not([href]) {
+  opacity: 0.8;
+}
+
+.logo[href]:hover .logo__img,
+.logo[href]:focus .logo__img {
+  opacity: 0;
+  transition: 0.2;
+}
+.logo[href]:hover .logo__animation img,
+.logo[href]:focus .logo__animation img {
+  opacity: 1;
+  transition: 0.2;
+}

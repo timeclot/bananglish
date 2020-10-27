@@ -1,0 +1,25 @@
+:root {
+  --primary-font: 'Tahoma', 'Arial', sans-serif;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: 'Tahoma';
+
+  font-display: swap;
+  src:
+    url('../font/tahoma-regular.woff2') format('woff2'),
+    url('../font/tahoma-regular.woff') format('woff');
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: 'Tahoma';
+
+  font-display: swap;
+  src:
+    url('../font/tahoma-bold.woff2') format('woff2'),
+    url('../font/tahoma-bold.woff') format('woff');
+}

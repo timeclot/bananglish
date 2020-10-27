@@ -1,0 +1,139 @@
+.btn {
+  display: inline-block;
+
+  vertical-align: middle;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  background: none;
+}
+
+.btn_primary {
+  background-color: #61efce;
+  padding: .5em 1em;
+  border-radius: 5px;
+  color: #343233;
+}
+
+.btn_primary:hover,
+.btn_primary:focus {
+  background-color: #45edc6;
+}
+
+.btn_hamburger {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: #343233;
+  border-radius: 50%;
+}
+
+.btn_hamburger:hover {
+  transition: border-color 0.2s;
+}
+
+.btn_hamburger:focus,
+.btn_hamburger:hover {
+  background-color: #343233;
+}
+
+.btn_hamburger::before,
+.btn_hamburger::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+
+  background-color: #efdab9;
+  transform: translateX(-50%);
+
+  transition: 0.2s;
+}
+
+.btn_hamburger::before {
+  top: 16px;
+
+  transition: 0.2s;
+}
+
+.btn_hamburger::after {
+  top: 22px;
+
+  transition: 0.2s;
+}
+
+.btn_hamburger:hover::before,
+.btn_hamburger:hover::after {
+  top: 19px;
+}
+
+.btn_close {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: #343233;
+  border-radius: 50%;
+}
+
+.btn_close:focus,
+.btn_close:hover {
+  background-color: #343233;
+}
+
+.btn_close::before,
+.btn_close::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 50%;
+
+  display: block;
+  width: 20px;
+  height: 2px;
+
+  background-color: #efdab9;
+  transform: translateX(-50%);
+
+  transition: 0.2s;
+}
+
+.btn_close::before {
+  transform: translateX(-50%) rotate(45deg);
+
+  transition: 0.2s;
+}
+.btn_close::after {
+  transform: translateX(-50%) rotate(-45deg);
+
+  transition: 0.2s;
+}
+
+.btn_menu {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 55;
+  box-shadow: 0 0 50px -5px #000000;
+  background-color: #343233;
+}
+
+.btn_hidden {
+  display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  .btn_menu {
+    display: none;
+  }
+  .btn_descktop-hidden {
+    display: none;
+  }
+}
