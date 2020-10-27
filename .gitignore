@@ -1,3 +1,6 @@
 /node_modules
 *.pdf
 *package-lock.json
+design/
+build/*
+!build/readme.md
