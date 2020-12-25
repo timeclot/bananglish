@@ -15,19 +15,18 @@
 }
 
 .sounds__title a {
-  color:#8e8373;
+  color: #8e8373;
   text-decoration: none;
 }
 
 .sounds__title a:hover,
 .sounds__title a:focus,
 .sounds__title a.sounds__link_active {
-  color:#ebac00;
+  color: #ebac00;
   transition: color 0.3s;
 }
 
 .sounds__item {
-  margin-left: auto;
   display: flex;
   flex-basis: 12.5%;
   padding: 2px;
@@ -72,7 +71,6 @@
   background-color: #ffd152;
   transition: color 0.3s, background 0.3s;
 }
-
 
 .sounds__list_vowels .sounds__item:nth-child(13) {
   margin-right: 37.5%;
