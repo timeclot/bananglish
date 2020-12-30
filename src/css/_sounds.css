@@ -1,42 +1,65 @@
 .sounds {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 1em;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  background-color: #343233;
+  background-image: url(../img/mobile-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  box-shadow: 0 -20px 30px rgba(0, 0, 0, 0.5);
 }
 
 .sounds__list {
-  padding: 0;
+  padding: 0 0;
   margin: 0;
-  margin-right: -2px;
-  margin-left: -2px;
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: scroll;
 }
 
-.sounds__title a {
-  color: #8e8373;
-  text-decoration: none;
-  font-size: 16px;
+.sounds__list::before,
+.sounds__list::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 40px;
+  flex-shrink: 0;
+  scrollbar-color: rgba(255, 209, 82, 0.8) transparent;
+  scrollbar-width: thin;
 }
 
-.sounds__title a:hover,
-.sounds__title a:focus,
-.sounds__title a.sounds__link_active {
-  color: #ebac00;
-  transition: color 0.3s;
+.sounds__list::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.sounds__list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 209, 82, 0.8);
+}
+
+.sounds__list::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.sounds__title {
+  display: none;
 }
 
 .sounds__item {
   display: flex;
-  flex-basis: 12.5%;
   padding: 2px;
   font-size: 20px;
   line-height: 1.2;
-}
-
-.sounds__container:last-of-type {
-  margin-bottom: 1em;
+  flex-shrink: 0;
+  height: 40px;
+  width: 40px;
 }
 
 .sounds__item a {
@@ -73,15 +96,46 @@
   transition: color 0.3s, background 0.3s;
 }
 
-.sounds__list_vowels .sounds__item:nth-child(13) {
-  margin-right: 37.5%;
+.sounds__btn {
+  display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .sounds {
-    padding-top: 1em;
+    position: sticky;
+    top: 0;
+    right: 0;
+    padding-top: 1.3em;
     padding-left: 0;
     padding-right: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .sounds__list {
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    margin-right: -2px;
+    margin-left: -2px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sounds__item {
+    width: auto;
+    height: auto;
+    flex-basis: 12.5%;
+  }
+
+  .sounds__list::before,
+  .sounds__list::after {
+    display: none;
+  }
+
+  .sounds__list_vowels .sounds__item:nth-child(13) {
+    margin-right: 37.5%;
   }
 
   .sounds__btn {
@@ -90,10 +144,33 @@
 
   .sounds__container {
     max-width: 360px;
-    padding-top: 1em;
   }
 
   .sounds__container:last-of-type {
-    margin-bottom: 1em;
+    margin-bottom: 20px;
+  }
+
+  .sounds__title {
+    display: block;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 14px;
+    font-size: 0;
+  }
+
+  .sounds__title a {
+    color: #8e8373;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1;
+    opacity: 0.5;
+  }
+
+  .sounds__title a:hover,
+  .sounds__title a:focus,
+  .sounds__title a.sounds__link_active {
+    color: #ebac00;
+    transition: color 0.3s;
+    opacity: 1;
   }
 }

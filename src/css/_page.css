@@ -64,13 +64,12 @@
   }
 
   .page__title {
-    padding-top: 1.5em;
+    padding-top: 1em;
     margin-bottom: 2em;
   }
 
   .page__container {
     display: flex;
-    /* width: 100%; */
     max-width: 1320px;
     margin: 0 auto;
     padding-top: 100px;
