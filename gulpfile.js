@@ -27,16 +27,17 @@ function browsersync() {
   })
 }
 
-function scripts() {
+function js() {
   return src([
-    `src/js/*.js`])
+    'src/js/script.js'])
     .pipe(plumber())
-    .pipe(sourcemaps.init())
-    // .pipe(rollup({}, `iife`))
-    .pipe(sourcemaps.write(``))
-    // .pipe(rename(`script.min.js`))
+    // .pipe(sourcemap.init())
+    .pipe(rollup({}, 'iife'))
+    .pipe(dest("build/js"))
+    // .pipe(sourcemap.write(''))
+    .pipe(rename('script.min.js'))
     .pipe(uglify())
-    .pipe(dest(`build/js`))
+    .pipe(dest('build/js'))
     .pipe(browserSync.stream())
 }
 
@@ -76,7 +77,7 @@ function cleanimg() {
 }
 
 function startwatch() {
-  watch('src/**/*.js', scripts);
+  watch('src/**/*.js', js);
   watch('src/**/*.css', styles);
   watch('src/font/**/*.{woff,woff2}', font);
   watch('src/**/*.html', html);
@@ -89,12 +90,12 @@ function cleandist() {
 
 exports.deploy = deploy;
 exports.browserSync = browserSync;
-exports.scripts = scripts;
+exports.js = js;
 exports.styles = styles;
 exports.images = images;
 exports.cleanimg = cleanimg;
 exports.html = html;
 exports.font = font;
-exports.build = series(cleandist, styles, scripts, images, html, font);
+exports.build = series(cleandist, styles, js, images, html, font);
 
-exports.start = parallel(styles, scripts, images, html, font, browsersync, startwatch);
+exports.start = parallel(styles, js, images, html, font, browsersync, startwatch);

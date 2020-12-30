@@ -1,4 +1,6 @@
-(function() {
+import scrollToTarget from './scroll-to-target.js';
+
+export default function scrollToAnchor() {
   var scrollAnim;
   const linksNode = document.querySelector('.sounds');
   const linkNodes = [...linksNode.querySelectorAll('a[href^="#"]')];
@@ -8,28 +10,14 @@
   let activeNode = sectionNodes[0];
 
   linkNodes.forEach((it) => {
-    it.addEventListener("click", function(event) {
+    it.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      const target = document.querySelector(evt.currentTarget.getAttribute("href"));
+      if (target != null) {
 
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target != null) {
-      event.preventDefault();
-      clearTimeout(scrollAnim);
-      let scrollMaxHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight,document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
-      let scroll = target.offsetTop;
-      const animTime = 400;//ms
-      const step = (scroll - window.scrollY) / 60 / (animTime / 1000);
-      if(scrollMaxHeight - scroll <= window.innerHeight)
-        scroll = scrollMaxHeight - window.innerHeight;
-      (function(){
-        if(Math.abs(window.scrollY - scroll) <= Math.abs(step)) {
-          window.scrollTo( 0, scroll);
-          return;
-        }
-        window.scrollTo( 0,parseFloat(window.scrollY) + step);
-        scrollAnim = setTimeout(arguments.callee, 1000 / 60);
-      })();
-    }
-  });
+        scrollToTarget(target);
+      }
+    });
   });
 
   activeNode.classList.add('sounds__link_active');
@@ -59,6 +47,5 @@
       setActiveLink();
     }, 1000);
   })
-
-})()
+}
 

@@ -1,4 +1,4 @@
-(function() {
+export default function preloader() {
   const hidePreloader = function() {
     const SECONDS_IN_MINUTES = 1000;
     const duration = 1.5;
@@ -22,4 +22,4 @@
     hidePreloader();
   })
   console.log('прелоадер');
-})()
+}

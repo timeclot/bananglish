@@ -1,4 +1,4 @@
-(function() {
+export default function smoothScrollCustom() {
     window.SmoothScroll({
         // Время скролла 400 = 0.4 секунды
         animationTime    : 900,
@@ -26,4 +26,4 @@
         // Поддержка тачпада
         touchpadSupport   : true,
     })
-})()
+}
