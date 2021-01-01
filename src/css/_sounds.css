@@ -24,6 +24,10 @@
   overflow-x: scroll;
 }
 
+.sounds__container_mobile_hidden {
+  display: none;
+}
+
 .sounds__list::before,
 .sounds__list::after {
   content: "";
@@ -110,6 +114,10 @@
     padding-right: 0;
     background: none;
     box-shadow: none;
+  }
+
+  .sounds__container_mobile_hidden {
+    display: block;
   }
 
   .sounds__list {
